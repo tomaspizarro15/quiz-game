@@ -1,0 +1,31 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home_title {
+    color: white;
+    opacity: 0;
+    animation: forwards display 500ms ease-in-out 1000ms;
+}
+.home_button {
+    width: 15%;
+    color: white;
+    border-radius: 32px;
+    border: none;
+    background-color: grey;
+    padding: 15px 0 15px 0;
+    animation: forwards displayButton 3000ms ease-in-out;
+}
+@keyframes displayButton {
+    0% {
+        transform: translateX(-500%);
+    }
+    60% {
+        transform: translateX(30%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

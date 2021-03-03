@@ -29,21 +29,33 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #306FAB;
+  background-color: #3b3b3b;
   position: absolute;
 
 }
 .App_bg_left {
-  width: 25%;
+  width: 0%;
   height: 100%;
-  background-color: #2b2b2b;
+  background-color: #45A1F7;
   border-radius: 1% 5%;
   position: absolute;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   border-radius: 2px;;
-  transform: translateY();
+  animation: displayWave forwards 3000ms ease-out;
+
+}
+@keyframes displayWave{
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 96%;
+  }
+  100% {
+    width: 95%;
+  }
 }
 .bg_wave {
   width: 5%;
@@ -57,7 +69,7 @@ body {
   top : 0;
   width: 150px; /*w = 150*/
   height: 100%;
-  background: radial-gradient(closest-side, #306FAB, #306FAB 50%,  transparent 50%);
+  background: radial-gradient(closest-side, #3b3b3b, #3b3b3b 50%,  transparent 50%);
   background-size: 150px 150px; /*w w*/
   background-position: 75px 0px; /*w/2 0*/
   background-repeat: repeat-y;
@@ -66,13 +78,22 @@ body {
 }
 .bg_wave::after {
   right: -75px;
-  background: radial-gradient(closest-side, transparent , transparent 50%,  #306FAB 50%);
+  background: radial-gradient(closest-side, transparent , transparent 50%,  #3b3b3b 50%);
   background-size: 150px 150px; /*w w*/
   background-position: -75px 75px; /*-w/2 0*/
   background-repeat: repeat-y;
   animation: infinite 125s waveAnimation;
-  
 }
+
+@keyframes display{ 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes waveAnimation {
   0% {
     background-position: -75px 75px;

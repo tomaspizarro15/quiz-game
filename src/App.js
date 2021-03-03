@@ -1,19 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Home from './components/home/home';
 
-const  App = () =>{
+const App = () => {
+
   return (
-    <div className="App">
-      <div className="App_bg">
-        <div className="App_content">
-          <h1 style={{color :'white'}}>MULTI QUIZ GAME</h1>
+    <BrowserRouter>
+      <div className="App">
+        <div className="App_bg">
+          <div className="App_content">
+            <Switch>
+              <Route exact path="/home" component={Home} />
+              <Route exact path="*" render ={() => <Redirect to ="/home"/>} />
+            </Switch>
+          </div>
+        </div>
+        <div className="App_bg_left">
+          <div className="bg_wave"></div>
         </div>
       </div>
-      <div className="App_bg_left">
-
-        <div className="bg_wave"></div>
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
