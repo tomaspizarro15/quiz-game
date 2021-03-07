@@ -1,0 +1,118 @@
+
+body {
+  margin: 0; 
+}
+.App {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto' , sans-serif;
+
+}
+.App_content {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 10000;
+  width: 90%;
+  height: 90%;
+  opacity: 1;
+  border-radius: 32px;  
+  
+}
+
+.App_bg {
+  overflow: hidden;
+  display:flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #3b3b3b;
+  position: absolute;
+
+}
+.App_bg_left {
+  width: 0%;
+  height: 100%;
+  background-color: #45A1F7;
+  border-radius: 1% 5%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border-radius: 2px;;
+  animation: displayWave forwards 3000ms ease-out;
+
+}
+@keyframes displayWave{
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 96%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+.bg_wave {
+  width: 5%;
+  height: 100%;
+  
+}
+.bg_wave::before ,.bg_wave::after {
+  content: "";
+  position: absolute;
+  right: 75px; /*w/2*/
+  top : 0;
+  width: 150px; /*w = 150*/
+  height: 100%;
+  background: radial-gradient(closest-side, #3b3b3b, #3b3b3b 50%,  transparent 50%);
+  background-size: 150px 150px; /*w w*/
+  background-position: 75px 0px; /*w/2 0*/
+  background-repeat: repeat-y;
+  animation: infinite 125s waveAnimation2;
+
+}
+.bg_wave::after {
+  right: -75px;
+  background: radial-gradient(closest-side, transparent , transparent 50%,  #3b3b3b 50%);
+  background-size: 150px 150px; /*w w*/
+  background-position: -75px 75px; /*-w/2 0*/
+  background-repeat: repeat-y;
+  animation: infinite 125s waveAnimation;
+}
+
+@keyframes display{ 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes waveAnimation {
+  0% {
+    background-position: -75px 75px;
+  }
+  50% {
+    background-position: -75px 2075px;
+  }
+  100% {
+    background-position: -75px 75px;
+  }
+}
+@keyframes waveAnimation2 {
+  0% {
+    background-position: 75px 0;
+  }
+  50% {
+    background-position: 75px 2000px;
+  }
+  100% {
+    background-position: 75px 0;
+  }
+}
