@@ -14,10 +14,16 @@
     color: white;
     border-radius: 32px;
     border: none;
-    background-color: grey;
+    background-color: #2b2b2b;
     padding: 15px 0 15px 0;
     animation: forwards displayButton 3000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 }
+.home_button:disabled {
+    background-color: gray;
+    transition: all 250ms ease-in-out;
+    cursor: not-allowed;
+} 
 @keyframes displayButton {
     0% {
         transform: translateX(-500%);
